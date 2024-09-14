@@ -8,6 +8,6 @@ dag = DAG(dag_id='bash_operator',
         schedule_interval='@once')
 
 task = BashOperator(task_id='task1',
-                    bash_command='echo "Hello World"',
-                    dag=dag)
+                bash_command='echo "Hello World"',
+                dag=dag)
 task
