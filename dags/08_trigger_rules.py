@@ -18,7 +18,7 @@ dag = DAG(dag_id='trigger_rules',
         max_active_runs=1
         )
 
-task1 = BashOperator(task_id='task1',
+t1 = BashOperator(task_id='task1',
                 bash_command='sleep 5 && echo "Task 1"',
                 retries=2,
                 retry_delay=5,
@@ -26,7 +26,7 @@ task1 = BashOperator(task_id='task1',
                 depends_on_past=False,
                 dag=dag)
 
-task2 = BashOperator(task_id='task2',
+t2 = BashOperator(task_id='task2',
                 bash_command='sleep 5 && echo "Task 2"',
                 retries=2,
                 retry_delay=5,
@@ -34,7 +34,7 @@ task2 = BashOperator(task_id='task2',
                 depends_on_past=True,
                 dag=dag)
 
-task3 = BashOperator(task_id='task3',
+t3 = BashOperator(task_id='task3',
                 bash_command='sleep 5 && echo "Task 3"',
                 retries=2,
                 retry_delay=5,
@@ -42,7 +42,7 @@ task3 = BashOperator(task_id='task3',
                 depends_on_past=True,
                 dag=dag)
 
-task4 = PythonOperator(task_id='task4',
+t4 = PythonOperator(task_id='task4',
                 python_callable=myfunction,
                 retries=2,
                 retry_delay=5,
@@ -50,12 +50,12 @@ task4 = PythonOperator(task_id='task4',
                 depends_on_past=True,
                 dag=dag)
 
-task5 = BashOperator(task_id='task5',
+t5 = BashOperator(task_id='task5',
                 bash_command='sleep 5 && echo "Task 5"',
                 retries=2,
                 retry_delay=5,
                 depends_on_past=True,
                 dag=dag)
 
-task1 >> task2 >> task3 >> task4 >> task5
+t1 >> t2 >> t3 >> t4 >> t5
 

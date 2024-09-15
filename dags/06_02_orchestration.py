@@ -11,21 +11,21 @@ dag = DAG(dag_id='orchestration_monday',
         max_active_runs=1
         )
 
-task1 = BashOperator(task_id='task1',
+t1 = BashOperator(task_id='task1',
                 bash_command='echo "Task 1"',
                 dag=dag)
 
-task2 = BashOperator(task_id='task2',
+t2 = BashOperator(task_id='task2',
                 bash_command='echo "Task 2"',
                 dag=dag)
 
-task3 = BashOperator(task_id='task3',
+t3 = BashOperator(task_id='task3',
                 bash_command='echo "Task 3"',
                 dag=dag)
 
-task4 = BashOperator(task_id='task4',
+t4 = BashOperator(task_id='task4',
                 bash_command='echo "Task 4"',
                 dag=dag)
 
-task1 >> task2 >> [task3, task4]
+t1 >> t2 >> [t3, t4]
 

@@ -11,7 +11,8 @@ dag = DAG(dag_id='09_01_external_sensor',
         max_active_runs=1
         )
 
-task1 = BashOperator(task_id='the_task',
+t1 = BashOperator(task_id='the_task',
                 bash_command='sleep 10 && echo "Task 1"',
                 depends_on_past=True,
                 dag=dag)
+t1

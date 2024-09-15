@@ -10,7 +10,7 @@ dag = DAG(dag_id='python_operator',
         start_date=datetime(2024, 1, 1),
         schedule_interval='@once')
 
-task = PythonOperator(task_id='task1',
+t1 = PythonOperator(task_id='task1',
                         python_callable=print_hello,
                         dag=dag)
-task
+t1

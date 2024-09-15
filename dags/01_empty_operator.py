@@ -7,5 +7,5 @@ dag = DAG(dag_id='empty_operator',
         start_date=datetime(2024, 1, 1),
         schedule_interval='@once')
 
-task = EmptyOperator(task_id='task1', dag=dag)
-task
+t1 = EmptyOperator(task_id='task1', dag=dag)
+t1

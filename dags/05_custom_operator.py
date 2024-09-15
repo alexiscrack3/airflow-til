@@ -9,9 +9,8 @@ dag = DAG(dag_id='custom_operator',
         start_date=datetime(2024, 1, 1),
         schedule_interval='@once')
 
-task = HelloOperator(
+t1 = HelloOperator(
     task_id='task1',
     name='World',
     dag=dag)
-
-task
+t1
