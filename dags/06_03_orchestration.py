@@ -2,10 +2,10 @@ from airflow import DAG
 from airflow.operators.bash import BashOperator
 from datetime import datetime
 
-dag = DAG(dag_id='orchestration_monday',
+dag = DAG(dag_id='orchestration_monthly',
         description='This DAG is used to test the orchestration between tasks',
-        schedule_interval='0 7 * * 1', # 7 AM every Monday
-        start_date=datetime(2024, 9, 1),
+        schedule_interval='@monthly',
+        start_date=datetime(2024, 1, 1),
         end_date=datetime(2024, 10, 1),
         default_args={'depends_on_past': True},
         max_active_runs=1
