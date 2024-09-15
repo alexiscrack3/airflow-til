@@ -9,7 +9,7 @@ default_args = {}
 def myfunction():
         raise Exception
 
-dag = DAG(dag_id='trigger_rules',
+dag = DAG(dag_id='08_trigger_rules',
         description='This DAG is used to test the trigger rules between tasks',
         schedule_interval='@daily',
         start_date=datetime(2024, 9, 1),

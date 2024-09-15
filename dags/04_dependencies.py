@@ -6,7 +6,7 @@ from datetime import datetime
 def print_hello():
     print("Hello World!")
 
-dag = DAG(dag_id='dependencies',
+dag = DAG(dag_id='04_dependencies',
         description='This DAG is used to test the dependencies between tasks',
         start_date=datetime(2024, 1, 1),
         schedule_interval='@once')

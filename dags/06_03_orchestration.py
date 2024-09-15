@@ -2,7 +2,7 @@ from airflow import DAG
 from airflow.operators.bash import BashOperator
 from datetime import datetime
 
-dag = DAG(dag_id='orchestration_monthly',
+dag = DAG(dag_id='06_03_orchestration',
         description='This DAG is used to test the orchestration between tasks',
         schedule_interval='@monthly',
         start_date=datetime(2024, 1, 1),
